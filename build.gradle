@@ -10,14 +10,6 @@ allprojects
                 mavenCentral()
             }
             dependencies{
-                'org.apache.felix:org.apache.felix.http.api:3.0.0'
-                'org.apache.felix:org.apache.felix.http.jetty:3.0.2'
-                'javax.servlet:javax.servlet-api:4.0.0-b01' //
-                'org.apache.felix:org.apache.felix.http.base:3.0.0'
-                'org.apache.felix:org.apache.felix.http.servlet-api:1.1.2'
-                'org.apache.felix:org.apache.felix.http.whiteboard3.0.0'
-                'org.apache.felix:org.apache.felix.metatype:1.0.12'
-                // compile 'org.slf4j:slf4j-log4j12:1.7.6'
                 compile 'org.osgi:org.osgi.core:6.0.0'
             }
         }
@@ -43,34 +35,19 @@ felix {
     httpPort = 8080
     properties.'org.osgi.framework.system.packages.extra' = 'sun.misc'
     properties.testProperty = '123'
-    //properties.'org.apache.felix.http.whiteboardEnabled'=true
-    //  felixVersion = '5.4.0'
 }
 
 dependencies {
-    //base
-    felix 'org.apache.felix:org.apache.felix.configadmin:1.8.6'
-    felix 'org.apache.felix:org.apache.felix.dependencymanager:4.3.0'
-    felix 'org.apache.felix:org.apache.felix.dependencymanager.shell:4.0.2'
-    felix 'org.apache.felix:org.apache.felix.eventadmin:1.3.2'
-    felix 'org.apache.felix:org.apache.felix.scr:1.6.0'
-    felix 'log4j:log4j:1.2.17'
-    //http
-    felix 'org.apache.felix:org.apache.felix.http.api:3.0.0'
-    felix 'org.apache.felix:org.apache.felix.http.jetty:3.0.2'
-    felix 'javax.servlet:javax.servlet-api:4.0.0-b01'
-    felix 'org.apache.felix:org.apache.felix.http.base:3.0.0'
-    felix 'org.apache.felix:org.apache.felix.http.servlet-api:1.1.2'
-    felix 'org.apache.felix:org.apache.felix.http.whiteboard:3.0.0'
-    felix 'org.apache.felix:org.apache.felix.metatype:1.0.12'
-    felix 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.6.3'
-    //felix webconsole
-    felix 'org.apache.felix:org.apache.felix.webconsole:3.1.8'
-    //gogo shell extensions
-    felix 'org.apache.felix:org.apache.felix.gogo.command:0.12.0'
-    felix 'org.apache.felix:org.apache.felix.gogo.runtime:0.10.0'
-    felix 'org.apache.felix:org.apache.felix.gogo.shell:0.10.0'
-
+    felix 'org.apache.felix:org.apache.felix.configadmin:1.8.6',
+            'org.apache.felix:org.apache.felix.eventadmin:1.3.2',
+            'org.apache.felix:org.apache.felix.scr:1.6.0',
+            'org.apache.felix:org.apache.felix.http.jetty:3.0.2',
+            'org.apache.felix:org.apache.felix.http.whiteboard:3.0.0',
+            'org.apache.felix:org.apache.felix.webconsole:3.1.8',
+            'org.apache.commons:commons-lang3:3.1',
+            'org.apache.felix:org.apache.felix.gogo.command:0.12.0',
+            'org.apache.felix:org.apache.felix.gogo.runtime:0.10.0',
+            'org.apache.felix:org.apache.felix.gogo.shell:0.10.0'
 
 }
 

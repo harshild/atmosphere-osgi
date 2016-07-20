@@ -23,15 +23,8 @@ public class Activator extends DependencyActivatorBase{
     public void init(BundleContext bundleContext, DependencyManager dependencyManager) throws Exception {
 
         Hashtable filterProps = new Hashtable();
-        filterProps.put("alias", "/hello");
-        filterProps.put("init.message", "=================Hello World!=====================");
-
+        filterProps.put("alias", "/notification");
         filterProps.put("com.sun.jersey.config.property.packages", "com.harshild.atmosphere.res");
-        filterProps.put("org.atmosphere.websocket.WebSocketProtocol", "com.harshild.atmosphere.res");
-        filterProps.put("org.atmosphere.cpr.atmosphereHandlerPath", "com.harshild.atmosphere.res");
-
-
-
         filterProps.put("org.atmosphere.websocket.messageContentType", "application/json");
         filterProps.put("org.atmosphere.cpr.broadcaster.maxProcessingThreads", "10");
 

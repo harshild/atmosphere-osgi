@@ -5,38 +5,14 @@ repositories {
 }
 
 dependencies{
-    compile('com.google.inject:guice:4.0-beta',
-            'com.nimbusds:nimbus-jose-jwt:3.4',
-            'org.apache.commons:commons-lang3:3.3.2',
-            'com.sun.jersey:jersey-server:1.18.1',
-            //atmosphere dependency
-            'org.atmosphere:atmosphere-runtime:2.3.0',
-            'org.atmosphere:atmosphere-annotations:2.3.0',
-            'org.atmosphere:atmosphere-jersey:2.3.0',
-            'org.atmosphere.client:javascript:2.3.2',
-            'javax.enterprise:cdi-api:2.0-EDR1',
-            'org.apache.felix:org.apache.felix.dependencymanager.annotation:4.1.0',
-            'com.fasterxml.jackson.core:jackson-annotations:2.6.3',
-            'com.fasterxml.jackson.core:jackson-core:2.6.3',
-            'com.fasterxml.jackson.core:jackson-databind:2.6.3',
-            'org.codehaus.jackson:jackson-core-asl:1.9.8',
-            'org.codehaus.jackson:jackson-mapper-asl:1.9.8',
-            'javax.validation:validation-api:1.1.0.Final',
-            'org.apache.servicemix.bundles:org.apache.servicemix.bundles.ant:1.9.7_1',
-            'org.json:json:20090211',
-            'com.sun.jersey:jersey-client:1.18.1',
-            'org.apache.servicemix.bundles:org.apache.servicemix.bundles.cglib:3.2.1_1',
+    compile group: 'org.atmosphere', name: 'atmosphere-jersey', version: '2.4.5'
+    compile group: 'org.atmosphere', name: 'atmosphere-runtime', version: '2.4.5'
+    compile group: 'org.atmosphere', name: 'atmosphere-annotations', version: '2.4.5'
+    compile 'javax.servlet:javax.servlet-api:3.1.0',
             'ch.qos.logback:logback-classic:1.1.2',
             'ch.qos.logback:logback-core:1.1.2',
-            'javax.servlet:javax.servlet-api:3.1.0',
-            'log4j:log4j:1.2.17',
-            'org.apache.maven.scm:maven-scm-api:1.9.4',
-            'org.json:json:20090211',
-            'org.apache.felix:org.apache.felix.dependencymanager:4.3.0'
-
-    )
-
-    compile  ('com.thoughtworks.proxytoys:proxytoys:1.0'){transitive =false}
+            'org.apache.felix:org.apache.felix.dependencymanager.annotation:4.1.0',
+            'org.apache.felix:org.apache.felix.dependencymanager:4.1.0'
 }
 
 
