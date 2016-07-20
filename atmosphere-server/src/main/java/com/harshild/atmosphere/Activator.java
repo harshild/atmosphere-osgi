@@ -24,9 +24,9 @@ public class Activator extends DependencyActivatorBase{
 
         Hashtable filterProps = new Hashtable();
         filterProps.put("alias", "/notification");
-        filterProps.put("com.sun.jersey.config.property.packages", "com.harshild.atmosphere.res");
-        filterProps.put("org.atmosphere.websocket.messageContentType", "application/json");
-        filterProps.put("org.atmosphere.cpr.broadcaster.maxProcessingThreads", "10");
+        filterProps.put("init.com.sun.jersey.config.property.packages", "com.harshild.atmosphere.res");
+        filterProps.put("init.org.atmosphere.websocket.messageContentType", "application/json");
+        filterProps.put("init.org.atmosphere.cpr.broadcaster.maxProcessingThreads", "10");
 
         this.registration = bundleContext.registerService(Servlet.class.getName(),new AtmosphereServlet(),filterProps);
     }
