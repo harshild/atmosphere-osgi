@@ -2,6 +2,7 @@ package com.harshild.atmosphere;
 
 import org.apache.felix.dm.DependencyActivatorBase;
 import org.apache.felix.dm.DependencyManager;
+import org.atmosphere.cpr.ApplicationConfig;
 import org.atmosphere.cpr.AtmosphereServlet;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
@@ -22,12 +23,15 @@ public class Activator extends DependencyActivatorBase{
     @Override
     public void init(BundleContext bundleContext, DependencyManager dependencyManager) throws Exception {
 
-        Hashtable filterProps = new Hashtable();
-        filterProps.put("alias", "/notification");
-        filterProps.put("init.com.sun.jersey.config.property.packages", "com.harshild.atmosphere.res");
-        filterProps.put("init.org.atmosphere.websocket.messageContentType", "application/json");
-        filterProps.put("init.org.atmosphere.cpr.broadcaster.maxProcessingThreads", "10");
+        Hashtable props = new Hashtable();
+        props.put("alias", "/notification");
+        props.put("init.com.sun.jersey.config.property.packages", "com.harshild.atmosphere.res");
+        props.put("init.org.atmosphere.websocket.messageContentType", "application/json");
+        props.put("init.org.atmosphere.cpr.broadcaster.maxProcessingThreads", "10");
 
-        this.registration = bundleContext.registerService(Servlet.class.getName(),new AtmosphereServlet(),filterProps);
+        //ATMOSPHERE HANDLE CONFIGURATION
+        //props.put("init."+ ApplicationConfig.ATMOSPHERE_HANDLER, "org.atmosphere.handler.ReflectorServletProcessor");
+
+        this.registration = bundleContext.registerService(Servlet.class.getName(),new AtmosphereServlet(),props);
     }
 }
