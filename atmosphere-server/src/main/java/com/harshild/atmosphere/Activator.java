@@ -22,7 +22,7 @@ public class Activator extends DependencyActivatorBase{
 
     @Override
     public void init(BundleContext bundleContext, DependencyManager dependencyManager) throws Exception {
-
+        Thread.currentThread().setContextClassLoader(this.getClass().getClassLoader());
         Hashtable props = new Hashtable();
         props.put("alias", "/notification");
         props.put("init.com.sun.jersey.config.property.packages", "com.harshild.atmosphere.res");
