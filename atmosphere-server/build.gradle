@@ -22,6 +22,7 @@ jar {
         attributes( 'Bundle-Name': archivesBaseName)
         attributes( 'Bundle-SymbolicName': archivesBaseName)
         attributes('Import-Package': '*')
+        attributes('DynamicImport-Package': '*')
         attributes('Export-Package': '*')
         attributes('Bundle-Activator': 'com.harshild.atmosphere.Activator')
 
